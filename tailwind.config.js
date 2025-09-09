@@ -1,0 +1,37 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  safelist: [
+    'bg-black',
+    'text-white',
+    'bg-gray-800',
+    'bg-gray-900',
+    'text-gray-300',
+    'text-gray-400',
+    'text-gray-500',
+    'bg-purple-500',
+    'text-purple-400',
+    'bg-pink-500',
+    'from-purple-500',
+    'to-pink-500',
+    'from-purple-400',
+    'to-pink-400',
+    'via-pink-400',
+    'to-blue-400',
+    'hover:bg-gray-700',
+    'hover:bg-gray-800',
+    'hover:text-purple-400',
+    'hover:shadow-purple-500/25',
+    'hover:scale-105',
+    'hover:-translate-y-2',
+    'group-hover:scale-110',
+    'group-hover:opacity-100',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}

@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { vinylRecords, heroSlides, genres } from './data/mockData';
+import { CartProvider } from './context/CartContext';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Компоненты
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import HeroSlider from './components/ui/HeroSlider';
+import VinylCollection from './components/ui/VinylCollection';
+import AboutSection from './components/ui/AboutSection';
+import ContactSection from './components/ui/ContactSection';
+import Cart from './components/ui/Cart';
 
+// Главный компонент приложения
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <CartProvider>
+      <div className="min-h-screen bg-black text-white">
+        <Header />
+        <main>
+          <HeroSlider slides={heroSlides} />
+          <VinylCollection records={vinylRecords} genres={genres} />
+          <AboutSection />
+          <ContactSection />
+        </main>
+        <Footer />
+        <Cart />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </CartProvider>
+  );
+};
 
-export default App
+export default App;
